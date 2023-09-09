@@ -1,54 +1,76 @@
-console.log('script file is running well: Start')
+
+console.log('script file is runnig well : Start')
 
 const mario = document.querySelector(".mario");
 const pipe = document.querySelector(".pipe");
 const heading = document.querySelector(".game");
+const vijay = document.querySelector(".vijay");
+const arjun = document.querySelector(".arjun");
+
+
 
 console.log(' before jump started executing');
 
-const jump = () => {
-  console.log('jump started executing');
 
+const jump = () => {
+    console.log('jump started executing');
+
+    vijay.classList.add("jump");
+    arjun.classList.add("jump");
   mario.classList.add("jump");
   setTimeout(() => {
     mario.classList.remove("jump");
-  }, 500);
+    vijay.classList.add("jump");
+    arjun.classList.add("jump");
+  }, 500);   
 };
+
 
 console.log(' after jump started executing');
 
-const checkCollision = () => {
-  const pipePosition = pipe.offsetLeft;
-  const marioPosition = +window
-    .getComputedStyle(mario)
-    .bottom.replace("px", " ");
+const loop = setInterval(() => {
 
-  console.log(marioPosition);
+    console.log('loop started executing');
+  
+    console.log(loop);
 
-  if (pipePosition <= 120 && pipePosition > 0 && marioPosition < 80) {
-    pipe.style.animation = "none";
-    pipe.style.left = `${pipePosition}px`;
+    const pipePosition = pipe.offsetLeft;
+    const marioPosition = +window
+      .getComputedStyle(mario)
+      .bottom.replace("px", " ");
 
-    mario.style.animation = "none";
-    mario.style.bottom = `${marioPosition}px`;
-    heading.textContent = 'Game over - Arjun '
+    console.log(marioPosition);
 
-    mario.src = "./images/game-over.png";
-    mario.style.width = "75px";
-    mario.style.marginLeft = "50px";
+    if (pipePosition <= 150 &&pipePosition>0 && marioPosition<80  ) {
+    //   pipe.style.animation = "none";
+    //   pipe.style.left = `${pipePosition}px`;
 
-    clearInterval(loop);
-  }
-};
+    //   mario.style.animation = "none";
+    //   mario.style.bottom = `${marioPosition}px`;
+    //   heading.textContent ='Game over-Arjun'
+       
 
-const loop = setInterval(checkCollision, 10);
+    //   mario.src = "./images/game-over.png";
+    //   mario.style.width = "75px";
+    //   mario.style.marginLeft = "50px";
+      
 
-document.addEventListener("keydown", (event) => {
-  if (event.key === " ") { // Respond to spacebar key
-    jump();
-  }
-});
+clearInterval(loop)
 
-document.addEventListener("click", jump); // Respond to mouse click (desktop) and tap (mobile)
+setTimeout(() => {window.location.reload()
+    
+}, 2000);
 
-console.log('script file is running well: End')
+
+
+
+    }
+  }, 10);
+
+
+document.addEventListener("keydown", jump);
+
+document.addEventListener('click' , jump)
+
+
+console.log('script file is runnig well : End')
