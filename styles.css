@@ -31,7 +31,7 @@
      
     width: 60px;
       
-    animation: pipe-animation 1s infinite linear;
+    animation: pipe-animation 1.5s infinite linear;
 
 
 }
@@ -96,3 +96,23 @@
         right: 100%;
     }
 }
+
+@media screen and (max-width: 768px) {
+    .game-board {
+        width: 100%;
+        
+        border-bottom: 10px solid rgb(35, 160, 35);
+    }
+    .clouds {
+        width: 300px; /* Adjust cloud size for smaller screens */
+    }
+    .mario {
+        width: 100px; /* Adjust Mario size for smaller screens */
+    }
+    .pipe {
+        width: 40px; /* Adjust pipe size for smaller screens */
+    }
+
+}
+
+     
