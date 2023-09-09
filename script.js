@@ -16,12 +16,12 @@ const jump = () => {
     console.log('jump started executing');
 
     vijay.classList.add("jump");
-    arjun.classList.add("jump");
-  mario.classList.add("jump");
+    // arjun.classList.add("jump");
+//   mario.classList.add("jump");
   setTimeout(() => {
-    mario.classList.remove("jump");
-    vijay.classList.add("jump");
-    arjun.classList.add("jump");
+    // mario.classList.remove("jump");
+    vijay.classList.remove("jump");
+    //  
   }, 500);   
 };
 
@@ -36,7 +36,7 @@ const loop = setInterval(() => {
 
     const pipePosition = pipe.offsetLeft;
     const marioPosition = +window
-      .getComputedStyle(mario)
+      .getComputedStyle(vijay)
       .bottom.replace("px", " ");
 
     console.log(marioPosition);
@@ -45,14 +45,14 @@ const loop = setInterval(() => {
     //   pipe.style.animation = "none";
     //   pipe.style.left = `${pipePosition}px`;
 
-    //   mario.style.animation = "none";
-    //   mario.style.bottom = `${marioPosition}px`;
+    //   vijay.style.animation = "none";
+    //   vijay.style.bottom = `${marioPosition}px`;
     //   heading.textContent ='Game over-Arjun'
        
 
-    //   mario.src = "./images/game-over.png";
-    //   mario.style.width = "75px";
-    //   mario.style.marginLeft = "50px";
+    //   vijay.src = "./images/game-over.png";
+    //   vijay.style.width = "75px";
+    //   vijay.style.marginLeft = "50px";
       
 
 clearInterval(loop)
